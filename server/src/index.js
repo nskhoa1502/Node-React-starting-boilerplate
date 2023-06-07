@@ -22,13 +22,14 @@ app.use(helmet());
 app.use(compression());
 
 // INIT CONNECTION DATABASE (mongoDB)
-require("./config/mongoDB.lv1.js");
+require("./database/mongoDB.lv2");
 
 // INIT CONNECTION DATABASE (MySQL)
-require("./config/mongoDB.lv1.js");
+require("./database/mysql.connect");
 
 // init router
 initRoutes(app);
+
 // HANDLING ERROR
 
 app.use("/", (err, req, res, next) => {
